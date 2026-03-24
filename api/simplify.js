@@ -50,50 +50,48 @@ export default async function handler(req, res) {
     }
 
     // Real OpenAI processing
-    const { Configuration, OpenAIApi } = require('openai');
+    const { OpenAI } = require('openai');
     
-    const configuration = new Configuration({
+    const openai = new OpenAI({
       apiKey: openaiApiKey,
     });
-    
-    const openai = new OpenAIApi(configuration);
 
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
-          content: `You are a legal document simplification expert. Your job is to translate complex legal language into plain English that anyone can understand. 
+          content: `You are an expert essay and academic writing analyst. Your job is to analyze essays and provide constructive feedback to help improve writing quality.
 
 Respond with a JSON object containing:
-1. "simplified" - A clear, conversational explanation of what the legal text means (200-400 words)
-2. "keyPoints" - An array of 3-7 important points the user should know
-3. "risks" - An array of 3-7 potential concerns or risks they should be aware of
+1. "simplified" - A comprehensive analysis of the essay's structure, strengths, and overall effectiveness (200-400 words)
+2. "keyPoints" - An array of 3-7 key strengths or positive elements in the essay
+3. "risks" - An array of 3-7 suggestions for improvement or areas that could be strengthened
 
-Make your explanation:
-- Conversational and easy to understand
-- Free of legal jargon
-- Practical and actionable
-- Focused on what matters most to an average person
+Make your analysis:
+- Constructive and encouraging
+- Focused on writing technique and structure
+- Practical and actionable for improvement
+- Educational for developing better writing skills
 
-Do not provide legal advice. Focus on education and understanding.`
+Focus on thesis development, argument structure, evidence use, transitions, and overall clarity.`
         },
         {
           role: "user",
-          content: `Please simplify this legal text: ${text}`
+          content: `Please analyze this essay and provide constructive feedback: ${text}`
         }
       ],
       temperature: 0.3,
       max_tokens: 1500,
     });
 
-    const result = completion.data.choices[0].message.content;
+    const result = completion.choices[0].message.content;
     const parsedResult = JSON.parse(result);
 
     return res.status(200).json(parsedResult);
 
   } catch (error) {
-    console.error('Error processing legal text:', error);
+    console.error('Error analyzing essay:', error);
     
     // Fallback to demo response on error
     const demoResponse = {
