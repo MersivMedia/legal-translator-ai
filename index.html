@@ -712,7 +712,7 @@
                 <!-- Loading State -->
                 <div class="loading" id="loadingState">
                     <div class="spinner"></div>
-                    <p>Analyzing legal document...</p>
+                    <p>Researching and writing your essay...</p>
                 </div>
 
                 <!-- Results Section -->
@@ -731,7 +731,12 @@
 
                     <!-- Generated Essay -->
                     <div class="result-section">
-                        <h3>📝 Your Generated Essay</h3>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="margin: 0;">📝 Your Generated Essay</h3>
+                            <button class="btn btn-secondary" id="copyEssayBtn" onclick="copyEssayToClipboard()" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                📋 Copy Essay
+                            </button>
+                        </div>
                         <div class="result-content" id="essayContent"></div>
                     </div>
 
@@ -868,13 +873,13 @@
                         </div>
 
                         <div class="faq-item">
-                            <div class="faq-question">How accurate is the AI simplification?</div>
-                            <div class="faq-answer">Our AI is trained on extensive legal datasets and provides highly accurate simplifications. However, complex legal nuances may require professional interpretation.</div>
+                            <div class="faq-question">How long should my essay prompt be?</div>
+                            <div class="faq-answer">Be as specific as possible! Include your topic, required length, key points to cover, target audience, and any special requirements. Detailed prompts generate more focused and relevant essays.</div>
                         </div>
 
                         <div class="faq-item">
-                            <div class="faq-question">Can I use this for business contracts?</div>
-                            <div class="faq-answer">Yes, you can simplify business contracts, but for important business decisions, we recommend having a legal professional review the original document.</div>
+                            <div class="faq-question">What writing styles can the AI generate?</div>
+                            <div class="faq-answer">Our AI can adapt to various writing styles including academic (MLA, APA, Chicago), persuasive, narrative, descriptive, expository, and creative writing. Just specify your preferred style in your prompt.</div>
                         </div>
 
                         <!-- FAQ Bottom Large Ad -->
@@ -1042,6 +1047,47 @@
             const errorDiv = document.getElementById('errorMessage');
             errorDiv.textContent = message;
             errorDiv.classList.add('show');
+        }
+
+        function copyEssayToClipboard() {
+            const essayContent = document.getElementById('essayContent');
+            const copyBtn = document.getElementById('copyEssayBtn');
+            
+            // Get text content (strip HTML)
+            const textContent = essayContent.innerText || essayContent.textContent;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(textContent).then(() => {
+                // Update button text to show success
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '✅ Copied!';
+                copyBtn.style.background = '#10b981';
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Update button text
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '✅ Copied!';
+                copyBtn.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.style.background = '';
+                }, 2000);
+            });
         }
 
         function resetForm() {
