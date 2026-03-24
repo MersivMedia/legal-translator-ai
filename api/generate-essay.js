@@ -41,11 +41,11 @@ export default async function handler(req, res) {
             messages: [
                 {
                     role: "system",
-                    content: "You are a professional essay writer. Generate well-structured, original essays based on the user's requirements. Include proper formatting with headings, clear arguments, and supporting evidence. Return the essay in markdown format."
+                    content: "You are a professional essay writer and academic writing expert. Create well-structured, original essays with clear thesis statements, supporting arguments, and proper academic formatting. Use engaging introductions, logical paragraph flow, evidence-based reasoning, and strong conclusions. Format in markdown with proper headings."
                 },
                 {
                     role: "user", 
-                    content: `Write an essay based on these requirements: ${essayPrompt}\n\nPlease provide:\n1. A well-structured essay in markdown format\n2. Word count\n3. Estimated reading time\n4. Key structural elements used`
+                    content: `Generate a comprehensive essay based on these requirements: ${essayPrompt}\n\nRequirements:\n1. Create a well-structured essay in markdown format with clear headings\n2. Include a strong thesis statement and supporting arguments\n3. Use evidence-based reasoning and examples\n4. Write engaging content appropriate for the target audience\n5. Ensure proper academic structure (intro, body, conclusion)\n6. Make it original and plagiarism-free\n\nPlease provide the complete essay with proper formatting.`
                 }
             ],
             max_tokens: 2000,
