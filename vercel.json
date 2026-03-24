@@ -3,11 +3,8 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "functions": {
-    "api/improve.js": {
+    "api/simplify.js": {
       "maxDuration": 30
-    },
-    "api/generate-doc.js": {
-      "maxDuration": 10
     }
   },
   "headers": [
