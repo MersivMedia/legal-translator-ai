@@ -733,8 +733,8 @@
                     <div class="result-section">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <h3 style="margin: 0;">📝 Your Generated Essay</h3>
-                            <button class="btn btn-secondary" id="copyEssayBtn" onclick="copyEssayToClipboard()" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; white-space: nowrap;">
-                                📋 Copy
+                            <button class="btn btn-secondary" id="copyEssayBtn" onclick="copyEssayToClipboard()" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; white-space: nowrap; min-width: auto;">
+                                📋
                             </button>
                         </div>
                         <div class="result-content" id="essayContent"></div>
@@ -1067,7 +1067,7 @@
             navigator.clipboard.writeText(textContent).then(() => {
                 // Update button text to show success
                 const originalText = copyBtn.innerHTML;
-                copyBtn.innerHTML = '✅ Copied!';
+                copyBtn.innerHTML = '✅';
                 copyBtn.style.background = '#10b981';
                 
                 // Reset button after 2 seconds
@@ -1087,7 +1087,7 @@
                 
                 // Update button text
                 const originalText = copyBtn.innerHTML;
-                copyBtn.innerHTML = '✅ Copied!';
+                copyBtn.innerHTML = '✅';
                 copyBtn.style.background = '#10b981';
                 
                 setTimeout(() => {
