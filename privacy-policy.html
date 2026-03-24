@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Cookie Policy | AI Essay Writer</title>
+    <meta name="description" content="Privacy Policy and Cookie Policy for AI Essay Writer. Learn how we collect, use, and protect your data in compliance with GDPR and CCPA regulations.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://ai-essay-writer.vercel.app/privacy-policy.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+    
+    <!-- Google Consent Management Platform -->
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-5838020439812802?ers=1" nonce="cmp-script"></script>
+    <script nonce="cmp-script">
+        (function() {
+            function signalGooglefcPresent() {
+                if (!window.frames['googlefcPresent']) {
+                    if (document.body) {
+                        const iframe = document.createElement('iframe');
+                        iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+                        iframe.style.display = 'none';
+                        iframe.name = 'googlefcPresent';
+                        document.body.appendChild(iframe);
+                    } else {
+                        setTimeout(signalGooglefcPresent, 0);
+                    }
+                }
+            }
+            signalGooglefcPresent();
+        })();
+    </script>
+    
+    <!-- Google tag (gtag.js) with Consent Management -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default consent - deny all
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+        
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .header h1 {
+            color: #1e40af;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #6b7280;
+            font-size: 1.1em;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 2px solid #3b82f6;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .content {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .content h2 {
+            color: #1e40af;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .content h3 {
+            color: #374151;
+            font-size: 1.3em;
+            margin: 25px 0 10px 0;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .content ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .consent-controls {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .consent-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px 10px 5px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .consent-btn.reject {
+            background: #ef4444;
+        }
+        
+        .consent-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .last-updated {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Privacy Policy & Cookie Policy</h1>
+            <div class="subtitle">AI Essay Writer - Your Privacy Matters</div>
+        </div>
+        
+        <a href="index.html" class="back-link">← Back to AI Essay Writer</a>
+        
+        <div class="last-updated">
+            <strong>Last Updated:</strong> March 24, 2026
+        </div>
+        
+        <div class="content">
+            <div class="highlight-box">
+                <strong>Quick Summary:</strong> We use cookies and AI processing to provide our essay writing service. Your essays aren't permanently stored. We comply with GDPR, CCPA, and other privacy laws. You control your cookie preferences below.
+            </div>
+            
+            <div class="consent-controls">
+                <h3 style="margin-top: 0;">🍪 Manage Your Cookie Preferences</h3>
+                <p>You can update your consent choices at any time:</p>
+                <button onclick="updateConsent('granted')" class="consent-btn">Accept All Cookies</button>
+                <button onclick="updateConsent('denied')" class="consent-btn reject">Reject All Cookies</button>
+                <p style="font-size: 0.9em; color: #6b7280; margin-top: 10px;">
+                    Current status: <span id="consent-status">Checking...</span>
+                </p>
+            </div>
+            
+            <h2>1. Information We Collect</h2>
+            
+            <h3>Essay Content</h3>
+            <p>When you use our AI essay writer, we temporarily process your essay prompts and topics to generate AI-powered content. This information is:</p>
+            <ul>
+                <li><strong>Not permanently stored</strong> - Essays are processed and discarded</li>
+                <li><strong>Not shared</strong> - Your content remains private during processing</li>
+                <li><strong>Used only for generation</strong> - Solely to create your requested essay</li>
+            </ul>
+            
+            <h3>Automatically Collected Data</h3>
+            <p>Like most websites, we automatically collect certain technical information:</p>
+            <ul>
+                <li>IP address and general location (country/region)</li>
+                <li>Browser type and version</li>
+                <li>Device information (mobile, desktop, screen size)</li>
+                <li>Pages visited and time spent on our site</li>
+                <li>Referring website (how you found us)</li>
+            </ul>
+            
+            <h2>2. How We Use Cookies</h2>
+            
+            <h3>Essential Cookies</h3>
+            <p>These cookies are necessary for our website to function properly:</p>
+            <ul>
+                <li>Remember your cookie preferences</li>
+                <li>Maintain security during your session</li>
+                <li>Enable basic website functionality</li>
+            </ul>
+            
+            <h3>Analytics Cookies</h3>
+            <p>Help us understand how visitors use our site (only with your consent):</p>
+            <ul>
+                <li>Google Analytics - Track page views and user behavior</li>
+                <li>Performance monitoring - Identify slow-loading pages</li>
+                <li>Error tracking - Fix technical issues</li>
+            </ul>
+            
+            <h3>Advertising Cookies</h3>
+            <p>Used to serve relevant advertisements via Google AdSense (only with your consent):</p>
+            <ul>
+                <li>Google AdSense - Display targeted advertisements</li>
+                <li>Ad performance tracking - Measure ad effectiveness</li>
+                <li>Personalization - Show ads relevant to your interests</li>
+            </ul>
+            
+            <h2>3. Third-Party Services</h2>
+            
+            <h3>Google AdSense</h3>
+            <p>We use Google AdSense to display advertisements. Google may collect data for ad personalization including:</p>
+            <ul>
+                <li>Your browsing history on our site and other sites</li>
+                <li>Your interaction with advertisements</li>
+                <li>Demographic information for ad targeting</li>
+            </ul>
+            <p>Learn more: <a href="https://policies.google.com/privacy" target="_blank" style="color: #3b82f6;">Google Privacy Policy</a></p>
+            
+            <h3>OpenAI (AI Processing)</h3>
+            <p>Essay generation is powered by OpenAI's API. Your essay prompts are:</p>
+            <ul>
+                <li>Sent securely to OpenAI for processing</li>
+                <li>Subject to OpenAI's privacy policy</li>
+                <li>Not used by us for training or improvement</li>
+                <li>Not permanently stored by our service</li>
+            </ul>
+            <p>Learn more: <a href="https://openai.com/privacy/" target="_blank" style="color: #3b82f6;">OpenAI Privacy Policy</a></p>
+            
+            <h2>4. Data Protection & Compliance</h2>
+            
+            <h3>GDPR Compliance (European Union)</h3>
+            <p>If you're in the EU, you have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Rectification:</strong> Correct inaccurate information</li>
+                <li><strong>Erasure:</strong> Request deletion of your data</li>
+                <li><strong>Portability:</strong> Receive your data in a readable format</li>
+                <li><strong>Objection:</strong> Object to processing for legitimate interests</li>
+            </ul>
+            
+            <h3>CCPA Compliance (California)</h3>
+            <p>California residents have the right to:</p>
+            <ul>
+                <li>Know what personal information is collected</li>
+                <li>Know if personal information is sold or disclosed</li>
+                <li>Say no to the sale of personal information</li>
+                <li>Access personal information</li>
+                <li>Equal service and price, even if you exercise your privacy rights</li>
+            </ul>
+            
+            <h2>5. Data Security</h2>
+            <p>We implement appropriate security measures to protect your information:</p>
+            <ul>
+                <li><strong>HTTPS encryption</strong> for all data transmission</li>
+                <li><strong>Secure servers</strong> with regular security updates</li>
+                <li><strong>Limited access</strong> to personal information</li>
+                <li><strong>Regular security audits</strong> and monitoring</li>
+            </ul>
+            
+            <h2>6. Data Retention</h2>
+            <ul>
+                <li><strong>Essay content:</strong> Not permanently stored - processed and discarded</li>
+                <li><strong>Analytics data:</strong> Retained for 26 months (Google Analytics default)</li>
+                <li><strong>Cookie preferences:</strong> Stored locally in your browser</li>
+                <li><strong>Server logs:</strong> Retained for 30 days for security purposes</li>
+            </ul>
+            
+            <h2>7. Children's Privacy</h2>
+            <p>Our service is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+            
+            <h2>8. International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than your own, including the United States. We ensure appropriate safeguards are in place to protect your privacy rights.</p>
+            
+            <h2>9. Changes to Privacy Policy</h2>
+            <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last Updated" date.</p>
+            
+            <h2>10. Contact Information</h2>
+            <p>If you have any questions about this privacy policy or your personal information, please contact us:</p>
+            <ul>
+                <li><strong>Website:</strong> <a href="index.html" style="color: #3b82f6;">AI Essay Writer</a></li>
+                <li><strong>Email:</strong> Available through our contact form</li>
+                <li><strong>Response time:</strong> We aim to respond within 48 hours</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <strong>Your Consent Matters:</strong> By using our website, you acknowledge that you have read and understood this privacy policy. You can withdraw your consent for non-essential cookies at any time using the controls above.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Cookie consent management functions
+        function updateConsent(consent) {
+            // Update localStorage
+            localStorage.setItem('cookie-consent', consent);
+            
+            // Update gtag consent
+            if (consent === 'granted') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted', 
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+                document.getElementById('consent-status').textContent = 'All cookies accepted';
+                document.getElementById('consent-status').style.color = '#10b981';
+            } else {
+                gtag('consent', 'update', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied', 
+                    'analytics_storage': 'denied'
+                });
+                document.getElementById('consent-status').textContent = 'All cookies rejected';
+                document.getElementById('consent-status').style.color = '#ef4444';
+            }
+            
+            // Show confirmation
+            alert(consent === 'granted' ? 
+                'Cookie preferences updated: All cookies accepted' : 
+                'Cookie preferences updated: All cookies rejected'
+            );
+        }
+        
+        // Check current consent status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookie-consent');
+            const statusElement = document.getElementById('consent-status');
+            
+            if (consent === 'granted') {
+                statusElement.textContent = 'All cookies accepted';
+                statusElement.style.color = '#10b981';
+            } else if (consent === 'denied') {
+                statusElement.textContent = 'All cookies rejected'; 
+                statusElement.style.color = '#ef4444';
+            } else {
+                statusElement.textContent = 'No preference set';
+                statusElement.style.color = '#f59e0b';
+            }
+        });
+    </script>
+</body>
+</html>
