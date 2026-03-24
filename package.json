@@ -1,7 +1,7 @@
 {
-  "name": "ai-essay-writer",
+  "name": "legal-simple-ai",
   "version": "1.0.0",
-  "description": "AI-powered essay writer and analyzer - generate essays and get writing feedback",
+  "description": "AI-powered legal document simplifier that translates complex legal language into plain English",
   "private": true,
   "dependencies": {
     "openai": "^4.0.0"
