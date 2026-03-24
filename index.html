@@ -349,6 +349,7 @@
         }
         
         .mobile-only { display: none; }
+        .desktop-only { display: block; }
         
         @media (max-width: 768px) {
             /* Resize large ads for mobile */
@@ -358,6 +359,7 @@
             /* Show mobile ads */
             .ad-slot-mobile { display: flex !important; }
             .mobile-only { display: flex !important; }
+            .desktop-only { display: none !important; }
             
             /* Sticky bottom ad */
             .ad-slot-sticky { 
@@ -729,14 +731,30 @@
 
                 <!-- Results Section -->
                 <div class="results" id="resultsSection">
-                    <!-- Test Ad -->
-                    <div style="text-align: center; margin: 20px 0; padding: 20px; background: #f5f5f5; border: 1px solid #ddd;">
-                        <p style="margin-bottom: 15px; color: #666;">Advertisement</p>
+                    <!-- Top Banner Ad -->
+                    <div class="ad-slot ad-slot-leaderboard">
+                        <div class="ad-placeholder">Advertisement - Top Banner</div>
                         <ins class="adsbygoogle" 
-                             style="display:block; width: 728px; height: 90px;" 
+                             style="display:block" 
                              data-ad-client="ca-pub-5838020439812802"
                              data-ad-format="auto"
                              data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <!-- Mobile Ad -->
+                    <div class="ad-slot ad-slot-mobile">
+                        <div class="ad-placeholder">Advertisement - Mobile</div>
+                        <ins class="adsbygoogle" 
+                             style="display:block" 
+                             data-ad-client="ca-pub-5838020439812802"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
 
                     <!-- Generated Essay -->
@@ -756,6 +774,18 @@
                         <div class="essay-stats" id="essayStats"></div>
                     </div>
 
+                    <!-- Mid-Content Large Ad -->
+                    <div class="ad-slot ad-slot-large">
+                        <div class="ad-placeholder">Advertisement - Mid Content</div>
+                        <ins class="adsbygoogle" 
+                             style="display:block" 
+                             data-ad-client="ca-pub-5838020439812802"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
 
 
                     <!-- Essay Structure -->
@@ -764,6 +794,18 @@
                         <ul class="essay-structure" id="essayStructure"></ul>
                     </div>
 
+                    <!-- In-Feed Ad -->
+                    <div class="ad-slot ad-slot-infeed">
+                        <div class="ad-placeholder">Advertisement - In Feed</div>
+                        <ins class="adsbygoogle" 
+                             style="display:block" 
+                             data-ad-client="ca-pub-5838020439812802"
+                             data-ad-format="fluid"
+                             data-ad-layout="in-article"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
 
 
                     <!-- Academic Note -->
@@ -773,12 +815,46 @@
                             <p>This AI-generated essay is for educational and inspiration purposes. Always cite sources, check facts, and ensure originality for academic submissions.</p>
                         </div>
                     </div>
+
+                    <!-- Bottom Large Ad -->
+                    <div class="ad-slot ad-slot-large">
+                        <div class="ad-placeholder">Advertisement - Bottom</div>
+                        <ins class="adsbygoogle" 
+                             style="display:block" 
+                             data-ad-client="ca-pub-5838020439812802"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
                 </div>
 
-                <!-- Mobile Ads (shown after document analysis) -->
+                <!-- Post-Results Mobile Ad -->
                 <div class="ad-slot ad-slot-mobile mobile-only" style="margin: 1rem 0;">
-                    <div class="ad-placeholder">320x100 Mobile Banner - Post Analysis</div>
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <div class="ad-placeholder">Advertisement - Post Results Mobile</div>
+                    <ins class="adsbygoogle" 
+                         style="display:block" 
+                         data-ad-client="ca-pub-5838020439812802" 
+                         data-ad-format="auto" 
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <!-- Sticky Sidebar Ad (Desktop Only) -->
+                <div class="ad-slot ad-slot-sticky desktop-only">
+                    <div class="ad-placeholder">Advertisement - Sidebar</div>
+                    <ins class="adsbygoogle" 
+                         style="display:block" 
+                         data-ad-client="ca-pub-5838020439812802"
+                         data-ad-format="vertical"
+                         data-full-width-responsive="false"
+                         style="width: 160px; height: 600px;"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
 
                 <!-- Features Section -->
@@ -1111,32 +1187,12 @@
         // AdSense initialization moved to bottom of page
     </script>
     
-    <!-- Initialize AdSense Ads -->
+    <!-- AdSense Global Initialization -->
     <script>
-        // Simple AdSense initialization
+        // Global AdSense initialization - ads are now individually initialized
         window.addEventListener('load', function() {
-            try {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) {
-                console.log('AdSense load error:', e);
-            }
+            console.log('AdSense ready - individual ads will load when visible');
         });
-        
-        // Initialize ads when results are shown
-        function initializeResultsAds() {
-            try {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) {
-                console.log('AdSense results error:', e);
-            }
-        }
-        
-        // Hook into displayResults
-        const originalDisplayResults = displayResults;
-        displayResults = function(data) {
-            originalDisplayResults(data);
-            setTimeout(initializeResultsAds, 100);
-        };
     </script>
     
 </body>
