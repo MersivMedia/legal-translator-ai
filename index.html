@@ -634,9 +634,12 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5838020439812802" crossorigin="anonymous"></script>
     
-    <!-- AdSense Auto Ads (Optional - for automatic ad placement) -->
+    <!-- AdSense Auto Ads -->
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5838020439812802",
+            enable_page_level_ads: true
+        });
     </script>
     
 </head>
@@ -726,16 +729,14 @@
 
                 <!-- Results Section -->
                 <div class="results" id="resultsSection">
-                    <!-- Results Top Banner -->
-                    <div class="ad-slot ad-slot-leaderboard">
-                        <div class="ad-placeholder">HorizontalInArticleAd</div>
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="2961837389" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    </div>
-
-                    <!-- Mobile Ad (shown after interaction) -->
-                    <div class="ad-slot ad-slot-mobile">
-                        <div class="ad-placeholder">VerticalAd</div>
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="6138798518" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <!-- Test Ad -->
+                    <div style="text-align: center; margin: 20px 0; padding: 20px; background: #f5f5f5; border: 1px solid #ddd;">
+                        <p style="margin-bottom: 15px; color: #666;">Advertisement</p>
+                        <ins class="adsbygoogle" 
+                             style="display:block; width: 728px; height: 90px;" 
+                             data-ad-client="ca-pub-5838020439812802"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
                     </div>
 
                     <!-- Generated Essay -->
@@ -755,17 +756,7 @@
                         <div class="essay-stats" id="essayStats"></div>
                     </div>
 
-                    <!-- Mid-Results Large Rectangle (moved here for better UX) -->
-                    <div class="ad-slot ad-slot-large">
-                        <div class="ad-placeholder">Large Horizontal Ad</div>
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="8214164068" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    </div>
 
-                    <!-- Between Sections Ad -->
-                    <div class="ad-slot ad-slot-infeed">
-                        <div class="ad-placeholder">Horizontal Multiplex</div>
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="5588000726" data-ad-format="autorelaxed"></ins>
-                    </div>
 
                     <!-- Essay Structure -->
                     <div class="result-section">
@@ -773,11 +764,7 @@
                         <ul class="essay-structure" id="essayStructure"></ul>
                     </div>
 
-                    <!-- Post-Analysis Large Ad -->
-                    <div class="ad-slot ad-slot-large">
-                        <div class="ad-placeholder">Vertical Multiplex</div>
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="8860063723" data-ad-format="autorelaxed"></ins>
-                    </div>
+
 
                     <!-- Academic Note -->
                     <div class="result-section" style="background: rgba(59, 130, 246, 0.1); border-color: var(--primary);">
@@ -1126,25 +1113,29 @@
     
     <!-- Initialize AdSense Ads -->
     <script>
-        // Initialize all ad slots when page loads
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        // Simple AdSense initialization
+        window.addEventListener('load', function() {
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log('AdSense load error:', e);
+            }
+        });
         
         // Initialize ads when results are shown
-        function initializeAds() {
-            setTimeout(() => {
-                try {
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                } catch (e) {
-                    console.log('AdSense initialization skipped:', e);
-                }
-            }, 1000);
+        function initializeResultsAds() {
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log('AdSense results error:', e);
+            }
         }
         
-        // Call when results are displayed
+        // Hook into displayResults
         const originalDisplayResults = displayResults;
         displayResults = function(data) {
             originalDisplayResults(data);
-            initializeAds();
+            setTimeout(initializeResultsAds, 100);
         };
     </script>
     
