@@ -3,150 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | AI Essay Writer</title>
-    <meta name="description" content="Terms of Service for AI Essay Writer. Learn about acceptable use, limitations, and legal terms for using our AI-powered essay generation service.">
+    <title>Terms of Service - Legal Simple AI</title>
+    <meta name="description" content="Terms of Service for Legal Simple AI - Legal terms and conditions for using our AI-powered legal document simplifier.">
     <meta name="robots" content="index, follow">
-    
-    <link rel="canonical" href="https://ai-essay-writer.vercel.app/terms-of-service.html">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+    <link rel="canonical" href="https://legal-simple-ai-steel.vercel.app/terms-of-service.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
     
     <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --background: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-muted: #cbd5e1;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--background) 0%, #1a202c 100%);
+            color: var(--text);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-top: 20px;
-            margin-bottom: 20px;
+            padding: 2rem 1rem;
         }
-        
+
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
         }
-        
+
         .header h1 {
-            color: #1e40af;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
         }
-        
-        .header .subtitle {
-            color: #6b7280;
-            font-size: 1.1em;
-        }
-        
+
         .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #3b82f6;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-light);
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 16px;
-            border: 2px solid #3b82f6;
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
         }
-        
+
         .back-link:hover {
-            background: #3b82f6;
-            color: white;
+            color: var(--text);
         }
-        
+
         .content {
-            font-size: 1.1em;
-            line-height: 1.8;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
         }
-        
+
         .content h2 {
-            color: #1e40af;
-            font-size: 1.5em;
-            margin: 30px 0 15px 0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e5e7eb;
+            color: var(--primary-light);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
         }
-        
+
+        .content h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
         .content h3 {
-            color: #374151;
-            font-size: 1.3em;
-            margin: 25px 0 10px 0;
+            color: var(--text);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.5rem 0;
         }
-        
+
         .content p {
-            margin-bottom: 15px;
-            text-align: justify;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
         }
-        
+
         .content ul {
-            margin: 15px 0;
-            padding-left: 25px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            padding-left: 2rem;
         }
-        
+
         .content li {
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
-        
+
         .highlight-box {
-            background: #f8fafc;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
         }
-        
+
         .warning-box {
-            background: #fef2f2;
-            border-left: 4px solid #ef4444;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--error);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
         }
-        
+
+        .important-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid var(--warning);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-box {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
         .last-updated {
-            background: #fef3c7;
-            border: 1px solid #f59e0b;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.875rem;
             text-align: center;
-            font-weight: 600;
+            margin-top: 2rem;
         }
-        
-        .section-number {
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        
+
         @media (max-width: 768px) {
             .container {
-                margin: 10px;
-                padding: 15px;
+                padding: 1rem;
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
             
             .content {
-                font-size: 1em;
+                padding: 1.5rem;
             }
         }
     </style>
@@ -154,168 +172,135 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📋 Terms of Service</h1>
-            <div class="subtitle">AI Essay Writer - Usage Agreement</div>
+            <a href="/" class="back-link">← Back to Legal Simple AI</a>
+            <h1>Terms of Service</h1>
         </div>
-        
-        <a href="index.html" class="back-link">← Back to AI Essay Writer</a>
-        
-        <div class="last-updated">
-            <strong>Last Updated:</strong> March 24, 2026
-        </div>
-        
+
         <div class="content">
-            <div class="highlight-box">
-                <strong>Quick Summary:</strong> Our AI essay writer is a tool to help with writing and research. You're responsible for how you use the generated content. We provide the service as-is with reasonable efforts for uptime. Academic integrity and original work are your responsibility.
-            </div>
-            
-            <h2><span class="section-number">1.</span> Acceptance of Terms</h2>
-            <p>By accessing and using AI Essay Writer ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
-            
-            <h2><span class="section-number">2.</span> Description of Service</h2>
-            <p>AI Essay Writer is an online tool that uses artificial intelligence to help users generate written content including essays, research papers, and other written materials. The Service is provided "as is" without warranty of any kind.</p>
-            
-            <h3>What We Provide:</h3>
+            <div class="last-updated">Last updated: March 24, 2025</div>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using Legal Simple AI ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these terms, you should not use the Service.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>Legal Simple AI is an AI-powered tool that simplifies complex legal documents into plain English. The Service provides:</p>
             <ul>
-                <li>AI-powered essay and content generation</li>
-                <li>Various writing styles and formats</li>
-                <li>Free access with rate limiting</li>
-                <li>Web-based interface accessible via browsers</li>
+                <li>Document simplification and translation into plain language</li>
+                <li>Key points extraction from legal documents</li>
+                <li>Risk analysis and important considerations</li>
+                <li>Educational content about legal concepts</li>
             </ul>
-            
-            <h2><span class="section-number">3.</span> Acceptable Use Policy</h2>
             
             <div class="warning-box">
-                <strong>Important:</strong> You are solely responsible for ensuring your use of generated content complies with your institution's academic integrity policies, copyright laws, and ethical standards.
+                <p><strong>⚠️ IMPORTANT:</strong> This Service is for informational and educational purposes only and does not constitute legal advice.</p>
+            </div>
+
+            <h2>3. Not Legal Advice</h2>
+            <div class="important-box">
+                <p class="font-semibold" style="color: var(--warning); margin-bottom: 1rem;"><strong>⚖️ LEGAL DISCLAIMER</strong></p>
+                <p>The information provided by Legal Simple AI is NOT legal advice and should not be treated as such. Our AI simplifies legal language but cannot replace professional legal counsel.</p>
             </div>
             
-            <h3>Permitted Uses:</h3>
+            <p>You should:</p>
             <ul>
-                <li>Research and brainstorming assistance</li>
-                <li>Writing inspiration and idea generation</li>
-                <li>Draft creation for personal review and editing</li>
-                <li>Learning about writing structure and style</li>
-                <li>Professional content creation with proper attribution</li>
+                <li>Always consult with a qualified attorney for legal advice</li>
+                <li>Not rely solely on our AI simplifications for legal decisions</li>
+                <li>Understand that legal documents may have nuances that AI cannot capture</li>
+                <li>Verify important information with legal professionals</li>
             </ul>
-            
-            <h3>Prohibited Uses:</h3>
+
+            <h2>4. User Responsibilities</h2>
+            <p>By using our Service, you agree to:</p>
             <ul>
-                <li>Submitting AI-generated content as your own original work without disclosure</li>
-                <li>Violating academic integrity policies or honor codes</li>
-                <li>Creating content that violates copyright or intellectual property rights</li>
-                <li>Generating harmful, illegal, or offensive content</li>
-                <li>Attempting to reverse engineer or copy our service</li>
-                <li>Using automated tools to abuse our rate limits</li>
-                <li>Creating fake or misleading information</li>
+                <li>Use the Service only for lawful purposes</li>
+                <li>Not upload confidential or sensitive documents without proper authorization</li>
+                <li>Not attempt to reverse engineer or copy our AI models</li>
+                <li>Not use the Service to harm others or violate their rights</li>
+                <li>Respect intellectual property rights</li>
+                <li>Provide accurate information when using the Service</li>
             </ul>
-            
-            <h2><span class="section-number">4.</span> Rate Limits and Usage Restrictions</h2>
-            <p>To ensure fair access for all users, we implement the following restrictions:</p>
+
+            <h2>5. Usage Limitations</h2>
+            <p>To ensure fair access and service quality:</p>
             <ul>
-                <li><strong>Daily Limit:</strong> Maximum 3 essay generations per IP address per day</li>
-                <li><strong>Content Length:</strong> Maximum 10,000 characters per request</li>
-                <li><strong>Commercial Use:</strong> Contact us for commercial licensing arrangements</li>
-                <li><strong>Abuse Prevention:</strong> We monitor for unusual usage patterns</li>
+                <li>Free users are limited to 3 document simplifications per day per IP address</li>
+                <li>Document size may be limited to ensure processing efficiency (maximum 5,000 characters)</li>
+                <li>We reserve the right to suspend or terminate access for abuse</li>
+                <li>Excessive usage may result in temporary rate limiting</li>
             </ul>
+
+            <h2>6. Privacy and Data Handling</h2>
+            <p>Your privacy is important to us. Please review our <a href="privacy-policy.html" style="color: var(--primary-light); text-decoration: underline;">Privacy Policy</a> for detailed information about how we collect, use, and protect your information.</p>
             
-            <h2><span class="section-number">5.</span> Content and Intellectual Property</h2>
-            
-            <h3>Generated Content:</h3>
+            <h3>Key Points Regarding Document Processing:</h3>
             <ul>
-                <li>AI-generated content may not be entirely original or unique</li>
-                <li>You are responsible for fact-checking and verifying all generated content</li>
-                <li>We do not claim ownership of content generated using our service</li>
-                <li>You are responsible for ensuring generated content doesn't infringe on third-party rights</li>
+                <li>Documents are processed by third-party AI services (OpenAI)</li>
+                <li>We do not permanently store your document content</li>
+                <li>Processing data may be transmitted to third-party services</li>
+                <li>You are responsible for any sensitive information you choose to process</li>
             </ul>
-            
-            <h3>Service Content:</h3>
+
+            <h2>7. Intellectual Property</h2>
+            <p>The Service, including its software, design, content, and AI models, is owned by Legal Simple AI and protected by intellectual property laws.</p>
+            <p>You retain ownership of documents you upload, but grant us a limited license to process them for the purpose of providing the Service.</p>
+
+            <h2>8. Service Availability</h2>
+            <p>We strive to maintain high availability, but cannot guarantee:</p>
             <ul>
-                <li>Our website design, code, and branding remain our intellectual property</li>
-                <li>You may not copy, reproduce, or distribute our service without permission</li>
-                <li>Trademarks and logos are the property of their respective owners</li>
+                <li>Uninterrupted service availability</li>
+                <li>Error-free operation</li>
+                <li>Compatibility with all devices and browsers</li>
+                <li>Permanent availability of features</li>
             </ul>
-            
-            <h2><span class="section-number">6.</span> Academic Integrity Notice</h2>
-            
+            <p>We reserve the right to modify, suspend, or discontinue the Service at any time.</p>
+
+            <h2>9. Limitation of Liability</h2>
             <div class="warning-box">
-                <strong>Academic Responsibility:</strong> If you're a student, you must comply with your institution's policies regarding AI assistance and academic integrity. Always disclose the use of AI tools when required.
+                <p style="color: var(--error); margin-bottom: 1rem;"><strong>⚖️ LIABILITY DISCLAIMER</strong></p>
+                <p>Legal Simple AI and its operators shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use of this Service.</p>
             </div>
             
-            <p>We strongly encourage users to:</p>
+            <p>This includes but is not limited to:</p>
             <ul>
-                <li>Use AI-generated content as a starting point, not a final submission</li>
-                <li>Properly cite and attribute AI assistance when required</li>
-                <li>Review and edit all generated content thoroughly</li>
-                <li>Verify facts, citations, and claims independently</li>
-                <li>Ensure compliance with your institution's AI policy</li>
+                <li>Errors or inaccuracies in AI-generated content</li>
+                <li>Legal consequences of relying on simplified documents</li>
+                <li>Data loss or security breaches</li>
+                <li>Business losses or missed opportunities</li>
+                <li>Third-party actions or services</li>
             </ul>
-            
-            <h2><span class="section-number">7.</span> Privacy and Data</h2>
-            <p>Your privacy is important to us. Please review our <a href="privacy-policy.html" style="color: #3b82f6;">Privacy Policy</a> for information on how we collect, use, and protect your data.</p>
-            
-            <h3>Key Points:</h3>
+
+            <h2>10. Indemnification</h2>
+            <p>You agree to indemnify and hold harmless Legal Simple AI from any claims, damages, or expenses arising from your use of the Service, violation of these terms, or infringement of third-party rights.</p>
+
+            <h2>11. Termination</h2>
+            <p>We may terminate or suspend your access to the Service at any time, for any reason, including:</p>
             <ul>
-                <li>Essay content is not permanently stored on our servers</li>
-                <li>We use cookies and analytics to improve our service</li>
-                <li>Third-party services (OpenAI, Google) have their own privacy policies</li>
-                <li>You can control cookie preferences at any time</li>
+                <li>Violation of these terms</li>
+                <li>Abuse or misuse of the Service</li>
+                <li>Legal requirements</li>
+                <li>Business reasons</li>
             </ul>
-            
-            <h2><span class="section-number">8.</span> Disclaimers and Limitations</h2>
-            
-            <h3>Service Availability:</h3>
-            <ul>
-                <li>We strive for high uptime but cannot guarantee 100% availability</li>
-                <li>Maintenance and updates may temporarily interrupt service</li>
-                <li>Third-party dependencies (OpenAI API) may affect service availability</li>
-            </ul>
-            
-            <h3>Content Accuracy:</h3>
-            <ul>
-                <li>AI-generated content may contain errors, inaccuracies, or outdated information</li>
-                <li>We do not warrant the accuracy, completeness, or reliability of generated content</li>
-                <li>Users must verify all facts, citations, and claims independently</li>
-            </ul>
-            
-            <h3>Limitation of Liability:</h3>
-            <p>To the maximum extent permitted by law, AI Essay Writer shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of the service.</p>
-            
-            <h2><span class="section-number">9.</span> Termination</h2>
-            <p>We reserve the right to terminate or suspend access to our service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
-            
-            <h3>Grounds for Termination:</h3>
-            <ul>
-                <li>Violation of these Terms of Service</li>
-                <li>Abuse of rate limits or service resources</li>
-                <li>Illegal or harmful use of the service</li>
-                <li>Automated or bot-like usage patterns</li>
-            </ul>
-            
-            <h2><span class="section-number">10.</span> Changes to Terms</h2>
-            <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.</p>
-            
-            <h2><span class="section-number">11.</span> Third-Party Services</h2>
-            <p>Our service relies on third-party providers:</p>
-            <ul>
-                <li><strong>OpenAI:</strong> Powers our AI essay generation capabilities</li>
-                <li><strong>Google AdSense:</strong> Provides advertising services</li>
-                <li><strong>Analytics:</strong> Help us understand usage patterns</li>
-            </ul>
-            <p>These services have their own terms of service and privacy policies that apply to your use.</p>
-            
-            <h2><span class="section-number">12.</span> Governing Law</h2>
-            <p>These Terms shall be interpreted and governed by the laws of the jurisdiction in which our service operates, without regard to its conflict of law provisions.</p>
-            
-            <h2><span class="section-number">13.</span> Contact Information</h2>
-            <p>If you have any questions about these Terms of Service, please contact us:</p>
-            <ul>
-                <li><strong>Website:</strong> <a href="index.html" style="color: #3b82f6;">AI Essay Writer</a></li>
-                <li><strong>Email:</strong> Available through our contact form</li>
-                <li><strong>Response time:</strong> We aim to respond within 48 hours</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <strong>Agreement:</strong> By continuing to access or use our service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the service.
+            <p>You may stop using the Service at any time.</p>
+
+            <h2>12. Governing Law</h2>
+            <p>These terms shall be governed by and construed in accordance with the laws of the jurisdiction where Legal Simple AI operates, without regard to conflict of law principles.</p>
+
+            <h2>13. Changes to Terms</h2>
+            <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Your continued use of the Service after changes constitutes acceptance of the new terms.</p>
+
+            <h2>14. Contact Information</h2>
+            <div class="contact-box">
+                <p>If you have questions about these terms, please contact us:</p>
+                <p><strong>Email:</strong> legal@legalsimpleai.com</p>
+                <p><strong>Website:</strong> https://legal-simple-ai-steel.vercel.app</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <p style="color: var(--text-muted);">&copy; 2025 Legal Simple AI. All rights reserved.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="/" style="color: var(--primary-light); text-decoration: none; margin-right: 1rem;">Home</a>
+                    <a href="privacy-policy.html" style="color: var(--primary-light); text-decoration: none;">Privacy Policy</a>
+                </div>
             </div>
         </div>
     </div>

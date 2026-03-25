@@ -99,15 +99,23 @@
                 "name": "What types of legal documents can I simplify?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can simplify contracts, terms of service, privacy policies, rental agreements, employment contracts, NDAs, loan documents, insurance policies, and any other legal text up to 5,000 characters."
+                    "text": "You can simplify any legal document including employment contracts, rental agreements, terms of service, privacy policies, NDAs, service contracts, loan documents, insurance policies, and more. Our AI understands various legal formats."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Does this provide legal advice?",
+                "name": "How does the AI legal translator work?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No, Legal Simple AI is for educational purposes only and does not provide legal advice. It simplifies legal language into plain English to help you understand documents, but you should consult a qualified attorney for legal advice."
+                    "text": "Our AI analyzes complex legal language and translates it into plain English. It identifies key points you need to know, potential risks or concerns, and explains what the legal text means in everyday language."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this legal advice?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, Legal Simple AI provides educational explanations only. This is not legal advice. Always consult with a qualified attorney for legal decisions, contract negotiations, or legal advice."
                 }
             },
             {
@@ -115,606 +123,965 @@
                 "name": "Is my document data secure?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we process documents securely and do not permanently store your document content. Documents are processed for simplification only and are not retained in our systems."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How accurate is the AI simplification?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our AI provides high-quality simplifications and key points extraction, but legal documents can have nuances. Always verify important information with a legal professional for critical decisions."
+                    "text": "Yes. Your document content is processed securely and is not stored on our servers. We don't share, sell, or use your documents for any purpose other than providing the simplification service."
                 }
             }
         ]
     }
     </script>
     
+    <!-- Structured Data: HowTo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Simplify Legal Documents with AI",
+        "description": "Learn how to translate complex legal language into plain English in 3 easy steps using our free AI legal simplifier",
+        "totalTime": "PT2M",
+        "tool": {
+            "@type": "HowToTool",
+            "name": "Legal Simple AI"
+        },
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Upload Legal Text",
+                "text": "Copy and paste your legal document, contract, or terms into the text area (up to 5,000 characters)",
+                "position": 1
+            },
+            {
+                "@type": "HowToStep", 
+                "name": "AI Processing",
+                "text": "Our AI analyzes the legal language and identifies key points, risks, and important clauses",
+                "position": 2
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Get Plain English",
+                "text": "Receive a clear explanation in everyday language, plus key points and risk analysis",
+                "position": 3
+            }
+        ]
+    }
+    </script>
+    
     <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #64748b;
+            --background: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-muted: #cbd5e1;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --info: #06b6d4;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--background) 0%, #1a202c 100%);
+            color: var(--text);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 2rem;
+            padding: 2rem 1rem;
             min-height: 100vh;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+
+        .main-content {
+            flex: 1;
+            max-width: calc(100% - 200px);
         }
-        
+
+        .sidebar {
+            width: 180px;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
         .header {
             text-align: center;
             margin-bottom: 3rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem 0;
         }
-        
+
         .header h1 {
-            font-size: 2.5rem;
-            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
         }
-        
+
         .header p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
-        }
-        
-        .disclaimer {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
+            font-size: 1.25rem;
+            color: var(--text-muted);
             margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            font-size: 0.9rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .main-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--success), #059669);
             color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .form-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             padding: 2rem;
-            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
         }
-        
-        .card-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+
+        .form-card h2 {
+            color: var(--primary-light);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .card-content {
-            padding: 2rem;
-        }
-        
-        .form-group {
+
+        .input-group {
             margin-bottom: 1.5rem;
         }
-        
-        label {
+
+        .input-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #374151;
+            color: var(--text);
+            font-weight: 500;
         }
-        
-        textarea {
+
+        .textarea {
             width: 100%;
             min-height: 200px;
             padding: 1rem;
-            border: 2px solid #e5e7eb;
+            background: var(--background);
+            border: 2px solid var(--border);
             border-radius: 12px;
+            color: var(--text);
             font-size: 1rem;
+            line-height: 1.5;
             resize: vertical;
-            transition: border-color 0.3s;
+            transition: all 0.2s;
+            font-family: inherit;
         }
-        
-        textarea:focus {
+
+        .textarea:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
-        
-        .char-count {
+
+        .char-counter {
             text-align: right;
-            font-size: 0.9rem;
-            color: #6b7280;
+            font-size: 0.875rem;
+            color: var(--text-muted);
             margin-top: 0.5rem;
         }
-        
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
             border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.3s;
+            transition: all 0.2s;
+            text-decoration: none;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .submit-btn:hover {
+
+        .btn:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
         }
-        
-        .submit-btn:disabled {
-            background: #9ca3af;
+
+        .btn:disabled {
+            opacity: 0.6;
             cursor: not-allowed;
             transform: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: var(--border);
+            color: var(--text);
             box-shadow: none;
         }
-        
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 2rem;
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
-        
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--error);
+            color: #fecaca;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .loading-state {
+            text-align: center;
+            padding: 3rem;
+            display: none;
+        }
+
+        .loading-state.show {
+            display: block;
+        }
+
         .spinner {
-            border: 4px solid #f3f4f6;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
             width: 40px;
             height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary-light);
+            border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            to { transform: rotate(360deg); }
         }
-        
-        .result {
+
+        .results {
             display: none;
             margin-top: 2rem;
         }
-        
+
+        .results.show {
+            display: block;
+        }
+
         .result-section {
-            background: #f9fafb;
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .result-section h3 {
-            color: #374151;
-            font-size: 1.3rem;
+            color: var(--primary-light);
+            font-size: 1.25rem;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
-        .simplified-text {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-            line-height: 1.7;
-            color: #374151;
-        }
-        
-        .points-list {
+
+        .result-section ul {
             list-style: none;
             padding: 0;
         }
-        
-        .points-list li {
-            background: white;
-            margin-bottom: 0.5rem;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+        .result-section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-left: 1.5rem;
         }
-        
-        .risks-list li {
-            border-left-color: #ef4444;
+
+        .result-section li:last-child {
+            border-bottom: none;
         }
-        
+
+        .result-section li::before {
+            content: "•";
+            color: var(--primary-light);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
         .copy-btn {
-            background: #6b7280;
-            color: white;
-            border: none;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
             padding: 0.5rem 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
-        }
-        
-        .copy-btn:hover {
-            background: #4b5563;
-        }
-        
-        .error {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            color: #dc2626;
-            padding: 1rem;
             border-radius: 8px;
-            margin-bottom: 1rem;
-            display: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            transition: all 0.2s;
         }
-        
-        /* Ad Styles */
-        .ad-container {
-            text-align: center;
+
+        .copy-btn:hover {
+            background: var(--border);
+            color: var(--text);
+        }
+
+        /* Ad Slots */
+        .ad-slot {
             margin: 2rem 0;
-            padding: 1rem;
+            text-align: center;
         }
-        
-        .ad-label {
-            font-size: 0.8rem;
-            color: #6b7280;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        .ad-slot-leaderboard {
+            max-width: 728px;
+            height: 90px;
+            margin: 2rem auto;
         }
-        
+
+        .ad-slot-large {
+            max-width: 728px;
+            height: 250px;
+            margin: 2rem auto;
+        }
+
+        .ad-slot-sticky {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 0.5rem;
+        }
+
         .sidebar-ad {
             position: sticky;
             top: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
         }
-        
-        /* Responsive */
+
+        .ad-placeholder {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px dashed rgba(59, 130, 246, 0.3);
+            color: rgba(59, 130, 246, 0.7);
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 1.5rem;
+            font-size: 1.25rem;
+            color: var(--primary-light);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
+                flex-direction: column;
+                gap: 1rem;
                 padding: 1rem;
             }
             
-            .header h1 {
-                font-size: 2rem;
+            .main-content {
+                max-width: 100%;
             }
             
-            .header p {
-                font-size: 1rem;
+            .sidebar {
+                width: 100%;
+                position: static;
             }
-        }
-        
-        .layout {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 2rem;
-        }
-        
-        @media (max-width: 1024px) {
-            .layout {
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .features {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 3rem;
-        }
-        
-        .footer a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
+            
+            .ad-slot-sticky {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Top Banner Ad -->
+    <div class="ad-slot ad-slot-leaderboard" style="margin: 1rem auto;">
+        <div class="ad-placeholder">728x90 Top Banner Ad</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="1234567890" data-ad-format="leaderboard"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <div class="container">
-        <div class="header">
-            <h1>⚖️ Legal Simple AI</h1>
-            <p>Transform complex legal documents into plain English instantly</p>
-            <div class="disclaimer">
-                ⚠️ <strong>Educational Tool Only:</strong> This tool simplifies legal language for understanding purposes. It does not provide legal advice. Always consult a qualified attorney for legal decisions.
-            </div>
-        </div>
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="header">
+                    <div class="badge">⚖️ 100% Free Legal Document Simplifier</div>
+                    <h1>Transform Legal Jargon into Plain English</h1>
+                    <p>Our AI instantly translates complex legal documents into simple language anyone can understand. Get key points, risks, and clear explanations – completely free.</p>
+                </div>
+            </section>
 
-        <!-- Top Banner Ad -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5838020439812802"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+            <!-- Main Tool -->
+            <div class="form-card">
+                <h2>📄 Simplify Legal Document</h2>
+                <div class="input-group">
+                    <label for="legalText">Paste your legal document, contract, or terms of service here:</label>
+                    <textarea 
+                        id="legalText" 
+                        class="textarea" 
+                        placeholder="Example: 'The party of the first part agrees to indemnify and hold harmless the party of the second part against any and all claims, demands, actions, suits, damages, liabilities, losses, settlements, judgments, costs and expenses...'
 
-        <div class="layout">
-            <div class="main-content">
-                <div class="main-card">
-                    <div class="card-header">
-                        <h2>📄 Paste Your Legal Document</h2>
-                        <p>Contracts, Terms of Service, Privacy Policies, Agreements, and more</p>
+Supported documents:
+• Employment contracts
+• Rental agreements  
+• Terms of service
+• Privacy policies
+• Service contracts
+• Loan documents
+• Insurance policies
+• Purchase agreements
+And more!"
+                        maxlength="5000"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> / 5,000 characters
                     </div>
-                    <div class="card-content">
-                        <form id="simplifyForm">
-                            <div class="form-group">
-                                <label for="legalText">Legal Document Text (Max 5,000 characters)</label>
-                                <textarea id="legalText" 
-                                    placeholder="Example: &quot;The party of the first part agrees to indemnify and hold harmless the party of the second part against any and all claims, demands, actions, suits, damages, liabilities, losses, settlements, judgments, costs and expenses...&quot;"
-                                    maxlength="5000" required></textarea>
-                                <div class="char-count">
-                                    <span id="charCount">0</span>/5,000 characters
-                                </div>
-                            </div>
-                            
-                            <div class="error" id="errorMessage"></div>
-                            
-                            <button type="submit" class="submit-btn" id="submitBtn">
-                                🔍 Simplify Legal Document
-                            </button>
-                        </form>
-
-                        <div class="loading" id="loading">
-                            <div class="spinner"></div>
-                            <p>Analyzing legal document and translating to plain English...</p>
-                        </div>
-
-                        <div class="result" id="result">
-                            <div class="result-section">
-                                <h3>📝 Simplified Explanation</h3>
-                                <div class="simplified-text" id="simplifiedText"></div>
-                                <button class="copy-btn" onclick="copyToClipboard('simplifiedText')">Copy Text</button>
-                            </div>
-
-                            <div class="result-section">
-                                <h3>🔑 Key Points</h3>
-                                <ul class="points-list" id="keyPoints"></ul>
-                            </div>
-
-                            <div class="result-section">
-                                <h3>⚠️ Potential Risks & Concerns</h3>
-                                <ul class="points-list risks-list" id="risks"></ul>
-                            </div>
-                        </div>
-
-                        <!-- Middle Banner Ad -->
-                        <div class="ad-container">
-                            <div class="ad-label">Advertisement</div>
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-5838020439812802"
-                                 data-ad-slot="9876543210"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
+                </div>
+                
+                <div class="btn-group">
+                    <button id="simplifyBtn" class="btn" onclick="simplifyDocument()">
+                        ⚡ Simplify Document
+                    </button>
+                    <button id="resetBtn" class="btn btn-secondary" onclick="resetForm()">
+                        🔄 Start Over
+                    </button>
+                </div>
+                
+                <div id="errorMessage" class="error-message"></div>
+                
+                <div id="loadingState" class="loading-state">
+                    <div class="spinner"></div>
+                    <p>🤖 AI is analyzing your legal document...</p>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem;">This usually takes 1-2 minutes</p>
+                </div>
+                
+                <!-- Results Section -->
+                <div id="resultsSection" class="results">
+                    <div class="result-section">
+                        <h3>🔍 Plain English Explanation</h3>
+                        <div id="simplifiedText"></div>
+                        <button class="copy-btn" onclick="copyToClipboard('simplifiedText')">📋 Copy Explanation</button>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3>🔑 Key Points</h3>
+                        <ul id="keyPointsList"></ul>
+                        <button class="copy-btn" onclick="copyToClipboard('keyPointsList')">📋 Copy Key Points</button>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3>⚠️ Risks & Concerns</h3>
+                        <ul id="risksList"></ul>
+                        <button class="copy-btn" onclick="copyToClipboard('risksList')">📋 Copy Risks</button>
+                    </div>
+                    
+                    <div class="result-section" style="background: rgba(59, 130, 246, 0.1); border-color: var(--primary);">
+                        <h3>⚖️ Important Legal Disclaimer</h3>
+                        <p style="color: var(--text-muted); line-height: 1.6;">
+                            This AI-generated explanation is for <strong>educational purposes only</strong> and does not constitute legal advice. 
+                            Legal documents can have complex implications that require professional interpretation. 
+                            <strong>Always consult with a qualified attorney</strong> before making legal decisions or signing important documents.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="sidebar">
-                <!-- Sidebar Ad -->
-                <div class="sidebar-ad">
-                    <div class="ad-label">Advertisement</div>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5838020439812802"
-                         data-ad-slot="1111111111"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-
-                <!-- Feature List -->
-                <div class="sidebar-ad">
-                    <h3 style="color: white; margin-bottom: 1rem;">✨ What We Simplify</h3>
-                    <div style="color: rgba(255,255,255,0.9); line-height: 2;">
-                        🔹 Employment Contracts<br>
-                        🔹 Rental Agreements<br>
-                        🔹 Terms of Service<br>
-                        🔹 Privacy Policies<br>
-                        🔹 NDAs & Confidentiality<br>
-                        🔹 Service Agreements<br>
-                        🔹 Loan Documents<br>
-                        🔹 Insurance Policies<br>
-                        🔹 Purchase Agreements<br>
-                        🔹 Partnership Contracts
-                    </div>
-                </div>
-
-                <!-- Usage Stats -->
-                <div class="sidebar-ad">
-                    <h3 style="color: white; margin-bottom: 1rem;">📊 Usage Stats</h3>
-                    <div style="color: rgba(255,255,255,0.9); line-height: 1.8;">
-                        <strong>1,524+</strong> Documents Simplified<br>
-                        <strong>98%</strong> User Satisfaction<br>
-                        <strong>3 min</strong> Average Processing<br>
-                        <strong>Free</strong> Forever
-                    </div>
-                </div>
+            <!-- Mid Content Ad -->
+            <div class="ad-slot ad-slot-large">
+                <div class="ad-placeholder">728x250 Mid Content Large Rectangle</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="2345678901" data-ad-format="rectangle, large_rectangle"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
-        </div>
 
-        <!-- Bottom Banner Ad -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5838020439812802"
-                 data-ad-slot="2222222222"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+            <!-- Features Section -->
+            <section id="features" class="features">
+                <div class="feature">
+                    <h3>⚡ Instant Translation</h3>
+                    <p>Get complex legal language simplified into plain English in seconds, not hours. Our AI processes documents instantly.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 Key Points Extraction</h3>
+                    <p>Automatically identifies the most important clauses, obligations, and terms you need to understand.</p>
+                </div>
+                <div class="feature">
+                    <h3>⚠️ Risk Analysis</h3>
+                    <p>Highlights potential concerns, liabilities, and risks hidden in legal language that you should be aware of.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔒 Secure Processing</h3>
+                    <p>Your documents are processed securely and never stored. Complete privacy and confidentiality guaranteed.</p>
+                </div>
+                <div class="feature">
+                    <h3>📱 Any Device</h3>
+                    <p>Works perfectly on desktop, tablet, and mobile devices. Simplify legal documents anywhere, anytime.</p>
+                </div>
+                <div class="feature">
+                    <h3>💰 Always Free</h3>
+                    <p>No hidden costs, no signup required. Completely free legal document simplifier for everyone.</p>
+                </div>
+            </section>
 
-        <div class="footer">
-            <p>&copy; 2025 Legal Simple AI. Made with ❤️ to make legal documents understandable for everyone.</p>
-            <div>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <a href="#contact">Contact</a>
+            <!-- Large Ad -->
+            <div class="ad-slot ad-slot-large">
+                <div class="ad-placeholder">728x250 Large Ad</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="3456789012" data-ad-format="rectangle, large_rectangle"></ins>
+            </div>
+
+            <!-- How it Works -->
+            <section id="how-it-works">
+                <div class="form-card">
+                    <h2>⚖️ How It Works</h2>
+                    <div class="features">
+                        <div style="text-align: center;">
+                            <h3>1️⃣ Upload Legal Text</h3>
+                            <p>Copy and paste any legal document, contract, terms of service, or agreement into our text area (up to 5,000 characters).</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3>2️⃣ AI Analysis</h3>
+                            <p>Our advanced AI analyzes the legal language, identifies key clauses, and breaks down complex terms into understandable concepts.</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3>3️⃣ Get Plain English</h3>
+                            <p>Receive a clear explanation in everyday language, plus key points you need to know and potential risks to consider.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq">
+                <div class="form-card">
+                    <h2>❓ Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What types of legal documents can I simplify?</div>
+                        <div class="faq-answer">You can simplify any legal document including employment contracts, rental agreements, terms of service, privacy policies, NDAs, confidentiality agreements, service contracts, loan documents, insurance policies, purchase agreements, partnership contracts, and more. Our AI understands various legal formats and terminology.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is this tool really free?</div>
+                        <div class="faq-answer">Yes, Legal Simple AI is completely free to use. We're supported by advertising, so you can simplify legal documents without any cost or signup required. We offer up to 3 document simplifications per day per user.</div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is this legal advice?</div>
+                        <div class="faq-answer">No, Legal Simple AI provides educational explanations only. Our AI translates legal language into plain English for understanding purposes but does not provide legal advice. Always consult with a qualified attorney for legal decisions, contract negotiations, or legal advice.</div>
+                    </div>
+
+                    <!-- FAQ Mid Ad -->
+                    <div class="ad-slot ad-slot-leaderboard" style="margin: 2rem auto;">
+                        <div class="ad-placeholder">728x90 FAQ Mid Banner</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="4567890123" data-ad-format="leaderboard"></ins>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is the AI translation?</div>
+                        <div class="faq-answer">Our AI is trained on extensive legal language and provides high-quality simplifications. However, legal documents can have nuances that require professional interpretation. Use our explanations as a starting point for understanding, but always verify important details with a legal professional.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Is my document data secure and private?</div>
+                        <div class="faq-answer">Yes. Your document content is processed securely and is not permanently stored on our servers. We use encrypted connections and don't share, sell, or use your documents for any purpose other than providing the simplification service.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What should I do if I don't understand the simplified version?</div>
+                        <div class="faq-answer">If the simplified explanation is still unclear, we recommend consulting with a qualified attorney. Legal documents can be complex, and professional legal advice is always the best approach for important contracts or agreements.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use this for business contracts?</div>
+                        <div class="faq-answer">Legal Simple AI can help you understand business contracts by translating legal jargon into plain English. However, business contracts often have significant financial and legal implications. Always have important business agreements reviewed by a qualified business attorney.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How long does the simplification take?</div>
+                        <div class="faq-answer">Most legal documents are simplified within 1-2 minutes. Processing time depends on the length and complexity of the document. Simple contracts process faster, while complex agreements with multiple clauses may take a bit longer.</div>
+                    </div>
+
+                    <!-- FAQ Bottom Large Ad -->
+                    <div class="ad-slot ad-slot-large" style="margin: 2rem auto;">
+                        <div class="ad-placeholder">728x250 FAQ Bottom Large Rectangle</div>
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="5678901234" data-ad-format="rectangle, large_rectangle"></ins>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Right Sidebar Ad -->
+        <aside class="sidebar">
+            <div class="sidebar-ad">
+                <div class="ad-placeholder">160x600 Skyscraper</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="6789012345" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #2d3748; color: white; padding: 15px; z-index: 10000; border-top: 3px solid #3b82f6;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+            <div style="flex: 1; min-width: 300px;">
+                <p style="margin: 0; font-size: 14px;">
+                    🍪 We use cookies to enhance your experience and serve personalized ads. 
+                    <a href="privacy-policy.html" style="color: #93c5fd; text-decoration: underline;">Learn more about our privacy practices</a>
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button onclick="acceptCookies()" style="background: #10b981; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px;">Accept All</button>
+                <button onclick="rejectCookies()" style="background: transparent; color: white; border: 1px solid #6b7280; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px;">Reject All</button>
+                <button onclick="hideCookieBanner()" style="background: transparent; color: #9ca3af; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px;">✕</button>
             </div>
         </div>
     </div>
 
-    <script>
-        const form = document.getElementById('simplifyForm');
-        const textArea = document.getElementById('legalText');
-        const charCount = document.getElementById('charCount');
-        const submitBtn = document.getElementById('submitBtn');
-        const loading = document.getElementById('loading');
-        const result = document.getElementById('result');
-        const errorMessage = document.getElementById('errorMessage');
+    <!-- Sticky Bottom Ad -->
+    <div class="ad-slot ad-slot-sticky">
+        <div class="ad-placeholder">728x90 Sticky Bottom Banner</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="7890123456" data-ad-format="leaderboard"></ins>
+    </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Legal Simple AI. Made with ❤️ to make legal documents understandable for everyone.</p>
+        <div>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script>
         // Character counter
-        textArea.addEventListener('input', function() {
-            const count = this.value.length;
-            charCount.textContent = count;
-            
-            if (count > 5000) {
-                charCount.style.color = '#dc2626';
-            } else {
-                charCount.style.color = '#6b7280';
-            }
+        const textarea = document.getElementById('legalText');
+        const charCount = document.getElementById('charCount');
+        
+        textarea.addEventListener('input', function() {
+            charCount.textContent = this.value.length;
         });
 
-        // Form submission
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const text = textArea.value.trim();
-            
+        // API endpoint for Vercel
+        const API_ENDPOINT = '/api/simplify';
+
+        async function simplifyDocument() {
+            const text = textarea.value.trim();
+            const errorDiv = document.getElementById('errorMessage');
+            const loadingDiv = document.getElementById('loadingState');
+            const resultsDiv = document.getElementById('resultsSection');
+            const simplifyBtn = document.getElementById('simplifyBtn');
+            const resetBtn = document.getElementById('resetBtn');
+
+            // Clear previous errors
+            hideError();
+
+            // Validation
             if (!text) {
-                showError('Please enter some legal text to simplify.');
+                showError('Please enter a legal document or contract text to simplify.');
                 return;
             }
-            
+
             if (text.length > 5000) {
-                showError('Text is too long. Please limit to 5,000 characters.');
+                showError('Document is too long. Please keep it under 5,000 characters.');
                 return;
             }
 
             // Show loading state
-            hideError();
-            result.style.display = 'none';
-            loading.style.display = 'block';
-            submitBtn.disabled = true;
+            simplifyBtn.disabled = true;
+            loadingDiv.classList.add('show');
+            resultsDiv.classList.remove('show');
 
             try {
-                const response = await fetch('/api/simplify', {
+                const response = await fetch(API_ENDPOINT, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ text })
+                    body: JSON.stringify({ text: text })
                 });
 
-                const data = await response.json();
-
                 if (!response.ok) {
+                    const errorData = await response.json();
                     if (response.status === 429) {
-                        throw new Error(data.message || 'You have reached your daily limit of 3 document simplifications. Please try again tomorrow!');
+                        showError(errorData.message || 'Rate limit exceeded. Please try again tomorrow.');
+                        return;
                     }
-                    throw new Error(data.error || 'Failed to simplify document');
+                    throw new Error(errorData.error || 'Failed to simplify document');
                 }
 
-                displayResult(data);
+                const data = await response.json();
+                
+                // Display results
+                document.getElementById('simplifiedText').innerHTML = formatText(data.simplified);
+                
+                const keyPointsList = document.getElementById('keyPointsList');
+                keyPointsList.innerHTML = '';
+                data.keyPoints.forEach(point => {
+                    const li = document.createElement('li');
+                    li.textContent = point;
+                    keyPointsList.appendChild(li);
+                });
+
+                const risksList = document.getElementById('risksList');
+                risksList.innerHTML = '';
+                data.risks.forEach(risk => {
+                    const li = document.createElement('li');
+                    li.textContent = risk;
+                    risksList.appendChild(li);
+                });
+
+                // Show results
+                loadingDiv.classList.remove('show');
+                resultsDiv.classList.add('show');
+
             } catch (error) {
-                showError(error.message);
+                console.error('Error:', error);
+                showError(error.message || 'Failed to simplify document. Please try again.');
+                loadingDiv.classList.remove('show');
             } finally {
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
+                simplifyBtn.disabled = false;
             }
-        });
+        }
 
-        function displayResult(data) {
-            // Display simplified text
-            document.getElementById('simplifiedText').innerHTML = data.simplified.replace(/\n/g, '<br>');
-
-            // Display key points
-            const keyPointsList = document.getElementById('keyPoints');
-            keyPointsList.innerHTML = '';
-            data.keyPoints.forEach(point => {
-                const li = document.createElement('li');
-                li.textContent = point;
-                keyPointsList.appendChild(li);
-            });
-
-            // Display risks
-            const risksList = document.getElementById('risks');
-            risksList.innerHTML = '';
-            data.risks.forEach(risk => {
-                const li = document.createElement('li');
-                li.textContent = risk;
-                risksList.appendChild(li);
-            });
-
-            result.style.display = 'block';
-            result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function resetForm() {
+            textarea.value = '';
+            charCount.textContent = '0';
+            document.getElementById('resultsSection').classList.remove('show');
+            hideError();
         }
 
         function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.style.display = 'block';
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('show');
         }
 
         function hideError() {
-            errorMessage.style.display = 'none';
+            document.getElementById('errorMessage').classList.remove('show');
+        }
+
+        function formatText(text) {
+            return text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         }
 
         function copyToClipboard(elementId) {
             const element = document.getElementById(elementId);
-            const text = element.innerText;
+            let text = element.innerText || element.textContent;
             
             navigator.clipboard.writeText(text).then(function() {
-                // Provide feedback
-                const btn = event.target;
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                btn.style.background = '#10b981';
-                
+                const originalText = event.target.textContent;
+                event.target.textContent = '✅ Copied!';
                 setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '#6b7280';
+                    event.target.textContent = originalText;
                 }, 2000);
-            }).catch(function() {
-                alert('Failed to copy to clipboard. Please select and copy manually.');
+            }, function() {
+                alert('Failed to copy to clipboard');
+            });
+        }
+
+        // FAQ toggles
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    // Close all FAQ items
+                    faqItems.forEach(faq => faq.classList.remove('active'));
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Show cookie consent if not already accepted/rejected
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookieConsent').style.display = 'block';
+            }
+        });
+
+        // Cookie consent functions
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').style.display = 'none';
+            
+            // Initialize ads after consent
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        function hideCookieBanner() {
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        // Initialize ads if cookies were previously accepted
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            document.addEventListener('DOMContentLoaded', function() {
+                (adsbygoogle = window.adsbygoogle || []).push({});
             });
         }
     </script>
