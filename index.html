@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Legal Document Simplifier | AI-Powered Plain English Translator</title>
-    <meta name="description" content="Simplify complex legal documents instantly with AI. Translate contracts, agreements, and terms into plain English. Get key points and risk analysis. Free and secure.">
-    <meta name="keywords" content="legal document simplifier, legal language translator, contract analyzer, terms of service translator, legal jargon simplifier, plain english legal, contract simplifier, legal document analyzer, ai legal tool, legal text translator">
+    <title>Free Legal Help & Analysis | AI Legal Document Simplifier</title>
+    <meta name="description" content="Get free legal help and analysis instantly! Our AI simplifies complex legal documents into plain English. Free legal analysis of contracts, agreements, and terms.">
+    <meta name="keywords" content="free legal help, free legal analysis, legal document simplifier, contract analyzer, free legal advice, legal language translator, terms of service translator, legal jargon simplifier, plain english legal, ai legal tool, free legal document help">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://legal-simple-ai-steel.vercel.app/">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Free Legal Document Simplifier - AI Plain English Translator">
-    <meta property="og:description" content="Simplify complex legal documents instantly with AI. Translate contracts and agreements into plain English with key points and risk analysis.">
+    <meta property="og:title" content="Free Legal Help & Analysis - AI Legal Document Simplifier">
+    <meta property="og:description" content="Get free legal help and analysis instantly! Our AI simplifies complex legal documents into plain English. Free legal analysis of contracts and agreements.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://legal-simple-ai-steel.vercel.app/">
     <meta property="og:site_name" content="Legal Simple AI">
@@ -20,8 +20,8 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free Legal Document Simplifier - AI Plain English Translator">
-    <meta name="twitter:description" content="Simplify complex legal documents instantly with AI. Get key points and risk analysis in plain English.">
+    <meta name="twitter:title" content="Free Legal Help & Analysis - AI Legal Document Simplifier">
+    <meta name="twitter:description" content="Get free legal help and analysis instantly! Our AI simplifies complex legal documents into plain English.">
     
     <!-- Additional SEO Meta -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -50,7 +50,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Legal Simple AI",
-        "description": "100% free AI-powered legal document simplifier that translates complex legal language into plain English with key points and risk analysis",
+        "description": "Get free legal help and analysis instantly! Our AI provides free legal analysis of complex documents, translating legal language into plain English with key points and risk assessment",
         "url": "https://legal-simple-ai-steel.vercel.app/",
         "applicationCategory": "LegalApplication",
         "operatingSystem": "Any",
@@ -61,14 +61,15 @@
             "priceCurrency": "USD"
         },
         "featureList": [
-            "AI-powered legal document simplification",
+            "Free legal help and analysis",
+            "Free legal analysis of contracts",
+            "AI-powered legal document simplification", 
             "Plain English translation",
             "Key points extraction",
-            "Risk analysis",
+            "Risk analysis and assessment",
             "Contract simplification",
-            "Terms of service translation",
             "No signup required",
-            "100% free"
+            "100% free legal help"
         ],
         "aggregateRating": {
             "@type": "AggregateRating",
@@ -88,26 +89,26 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Is this legal document simplifier really free?",
+                "name": "Is this free legal help and analysis really free?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, Legal Simple AI is 100% free to use. We're supported by ads, so you can simplify legal documents at no cost. No credit card or signup required."
+                    "text": "Yes, our free legal help and analysis service is 100% free to use. We provide free legal analysis of contracts and documents at no cost. No credit card or signup required for free legal help."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What types of legal documents can I simplify?",
+                "name": "What types of legal documents can I get free legal analysis for?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can simplify any legal document including employment contracts, rental agreements, terms of service, privacy policies, NDAs, service contracts, loan documents, insurance policies, and more. Our AI understands various legal formats."
+                    "text": "Our free legal analysis covers employment contracts, rental agreements, terms of service, privacy policies, NDAs, service contracts, loan documents, insurance policies, and more. Get free legal help with any legal document format."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How does the AI legal translator work?",
+                "name": "How does the free legal analysis work?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Our AI analyzes complex legal language and translates it into plain English. It identifies key points you need to know, potential risks or concerns, and explains what the legal text means in everyday language."
+                    "text": "Our free legal help service uses AI to analyze complex legal language and provide free legal analysis in plain English. It identifies key points, potential risks, and explains what the legal text means in everyday language."
                 }
             },
             {
@@ -194,6 +195,98 @@
             line-height: 1.6;
             min-height: 100vh;
             overflow-x: hidden;
+            padding-top: 70px; /* Space for sticky navbar */
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0.75rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-light);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-light);
+            border-radius: 1px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .container {
@@ -642,6 +735,53 @@
             color: var(--text);
         }
 
+        /* Mobile Navbar */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .navbar-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(15px);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .navbar-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-link {
+                padding: 0.75rem 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .cta-button {
+                margin-top: 1rem;
+                text-align: center;
+                display: block;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .sidebar-left, .sidebar-right {
@@ -692,6 +832,27 @@
     </style>
 </head>
 <body>
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">
+                ⚖️ Legal Simple AI
+            </a>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="privacy-policy.html" class="nav-link">Privacy</a></li>
+                <li><a href="#tool" class="cta-button">Get Free Legal Help</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                ☰
+            </button>
+        </div>
+    </nav>
+
     <!-- Top Banner Ad -->
     <div class="ad-slot ad-slot-leaderboard" style="margin: 1rem auto;">
         <div class="ad-placeholder">728x90 Top Banner Ad</div>
@@ -722,15 +883,15 @@
             <!-- Hero Section -->
             <section class="hero">
                 <div class="header">
-                    <div class="badge">⚖️ 100% Free Legal Document Simplifier</div>
-                    <h1>Transform Legal Jargon into Plain English</h1>
-                    <p>Our AI instantly translates complex legal documents into simple language anyone can understand. Get key points, risks, and clear explanations – completely free.</p>
+                    <div class="badge">⚖️ Free Legal Help & Analysis</div>
+                    <h1>Get Free Legal Help & Analysis Instantly</h1>
+                    <p>Our AI provides free legal analysis of complex documents, translating legal jargon into plain English. Get key points, risk analysis, and clear explanations – 100% free legal help.</p>
                 </div>
             </section>
 
             <!-- Main Tool -->
-            <div class="form-card">
-                <h2>📄 Simplify Legal Document</h2>
+            <div id="tool" class="form-card">
+                <h2>📄 Free Legal Analysis Tool</h2>
                 <div class="input-group">
                     <label for="legalText">Paste your legal document, contract, or terms of service here:</label>
                     <textarea 
@@ -757,7 +918,7 @@ And more!"
                 
                 <div class="btn-group">
                     <button id="simplifyBtn" class="btn" onclick="simplifyDocument()">
-                        ⚡ Simplify Document
+                        ⚡ Get Free Legal Analysis
                     </button>
                     <button id="resetBtn" class="btn btn-secondary" onclick="resetForm()">
                         🔄 Start Over
@@ -815,12 +976,12 @@ And more!"
             <!-- Features Section -->
             <section id="features" class="features">
                 <div class="feature">
-                    <h3>⚡ Instant Translation</h3>
-                    <p>Get complex legal language simplified into plain English in seconds, not hours. Our AI processes documents instantly.</p>
+                    <h3>⚡ Free Legal Help</h3>
+                    <p>Get free legal analysis of complex documents in seconds. Our AI provides instant free legal help with any legal document.</p>
                 </div>
                 <div class="feature">
-                    <h3>🎯 Key Points Extraction</h3>
-                    <p>Automatically identifies the most important clauses, obligations, and terms you need to understand.</p>
+                    <h3>🎯 Free Legal Analysis</h3>
+                    <p>Get comprehensive free legal analysis that identifies key clauses, obligations, and terms you need to understand.</p>
                 </div>
                 <div class="feature">
                     <h3>⚠️ Risk Analysis</h3>
@@ -835,8 +996,8 @@ And more!"
                     <p>Works perfectly on desktop, tablet, and mobile devices. Simplify legal documents anywhere, anytime.</p>
                 </div>
                 <div class="feature">
-                    <h3>💰 Always Free</h3>
-                    <p>No hidden costs, no signup required. Completely free legal document simplifier for everyone.</p>
+                    <h3>💰 100% Free Legal Help</h3>
+                    <p>No hidden costs, no signup required. Completely free legal help and free legal analysis for everyone.</p>
                 </div>
             </section>
 
@@ -873,13 +1034,13 @@ And more!"
                     <h2>❓ Frequently Asked Questions</h2>
                     
                     <div class="faq-item">
-                        <div class="faq-question">What types of legal documents can I simplify?</div>
-                        <div class="faq-answer">You can simplify any legal document including employment contracts, rental agreements, terms of service, privacy policies, NDAs, confidentiality agreements, service contracts, loan documents, insurance policies, purchase agreements, partnership contracts, and more. Our AI understands various legal formats and terminology.</div>
+                        <div class="faq-question">What types of legal documents can I get free legal analysis for?</div>
+                        <div class="faq-answer">Our free legal analysis covers employment contracts, rental agreements, terms of service, privacy policies, NDAs, confidentiality agreements, service contracts, loan documents, insurance policies, purchase agreements, partnership contracts, and more. Get free legal help with any legal document format.</div>
                     </div>
                     
                     <div class="faq-item">
-                        <div class="faq-question">Is this tool really free?</div>
-                        <div class="faq-answer">Yes, Legal Simple AI is completely free to use. We're supported by advertising, so you can simplify legal documents without any cost or signup required. We offer up to 3 document simplifications per day per user.</div>
+                        <div class="faq-question">Is this free legal help really free?</div>
+                        <div class="faq-answer">Yes, our free legal help and analysis service is completely free to use. We provide free legal analysis of contracts and documents at no cost. No credit card or signup required for free legal help. We offer up to 3 free legal analyses per day.</div>
                     </div>
                     
                     <div class="faq-item">
@@ -1158,6 +1319,72 @@ And more!"
         document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('scroll', handleStickyAdVisibility);
             handleStickyAdVisibility(); // Check initial state
+        });
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navbarNav = document.getElementById('navbarNav');
+            
+            if (mobileMenuToggle && navbarNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navbarNav.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking nav links
+                const navLinks = navbarNav.querySelectorAll('.nav-link, .cta-button');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navbarNav.classList.remove('active');
+                    });
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80; // Account for sticky navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add active nav link highlighting based on scroll position
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id], div[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            function updateActiveNavLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNavLink);
+            updateActiveNavLink(); // Check initial state
         });
     </script>
 </body>
