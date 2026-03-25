@@ -203,11 +203,13 @@
             gap: 2rem;
             padding: 2rem 1rem;
             min-height: 100vh;
+            position: relative;
         }
 
         .main-content {
             flex: 1;
-            max-width: calc(100% - 200px);
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .sidebar {
@@ -215,6 +217,24 @@
             position: sticky;
             top: 2rem;
             height: fit-content;
+        }
+
+        .sidebar-left {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 160px;
+            z-index: 900;
+        }
+
+        .sidebar-right {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 160px;
+            z-index: 900;
         }
 
         .header {
@@ -492,6 +512,15 @@
             background: var(--card);
             border-top: 1px solid var(--border);
             padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .ad-slot-sticky.hidden {
+            transform: translateY(100%);
+        }
+
+        body.footer-visible .ad-slot-sticky {
+            transform: translateY(100%);
         }
 
         .sidebar-ad {
@@ -614,6 +643,16 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .sidebar-left, .sidebar-right {
+                display: none;
+            }
+            
+            .main-content {
+                max-width: 1000px;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -628,6 +667,10 @@
             .sidebar {
                 width: 100%;
                 position: static;
+            }
+            
+            .sidebar-left, .sidebar-right {
+                display: none;
             }
             
             .header h1 {
@@ -656,6 +699,22 @@
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+    </div>
+
+    <!-- Left Sticky Sidebar Ad -->
+    <div class="sidebar-left">
+        <div class="sidebar-ad">
+            <div class="ad-placeholder">160x600 Left Skyscraper</div>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="8901234567" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- Right Sticky Sidebar Ad -->
+    <div class="sidebar-right">
+        <div class="sidebar-ad">
+            <div class="ad-placeholder">160x600 Right Skyscraper</div>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="9012345678" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        </div>
     </div>
 
     <div class="container">
@@ -868,14 +927,6 @@ And more!"
             </section>
 
         </main>
-
-        <!-- Right Sidebar Ad -->
-        <aside class="sidebar">
-            <div class="sidebar-ad">
-                <div class="ad-placeholder">160x600 Skyscraper</div>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5838020439812802" data-ad-slot="6789012345" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            </div>
-        </aside>
     </div>
 
     <!-- Cookie Consent Banner -->
@@ -1084,6 +1135,30 @@ And more!"
                 (adsbygoogle = window.adsbygoogle || []).push({});
             });
         }
+
+        // Handle sticky bottom ad visibility near footer
+        function handleStickyAdVisibility() {
+            const footer = document.querySelector('footer');
+            const stickyAd = document.querySelector('.ad-slot-sticky');
+            
+            if (!footer || !stickyAd) return;
+
+            const footerRect = footer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Hide sticky ad when footer is visible (within 100px of viewport)
+            if (footerRect.top <= windowHeight + 100) {
+                stickyAd.classList.add('hidden');
+            } else {
+                stickyAd.classList.remove('hidden');
+            }
+        }
+
+        // Add scroll listener for sticky ad
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', handleStickyAdVisibility);
+            handleStickyAdVisibility(); // Check initial state
+        });
     </script>
 </body>
 </html>
